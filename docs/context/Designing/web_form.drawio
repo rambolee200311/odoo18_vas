@@ -1,0 +1,169 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="K5woDaLTDtnnpV5XqPdU">
+    <mxGraphModel dx="1414" dy="761" grid="1" gridSize="10" guides="0" tooltips="0" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="page_frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" value="" vertex="1">
+          <mxGeometry height="760" width="980" x="10" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="odoo_title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize:16;fontWeight:bold;strokeColor=none;fillColor=none;" value="新建 库内增值作业单" vertex="1">
+          <mxGeometry height="36" width="500" x="30" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_draft_top" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize:13;" value="保存草稿" vertex="1">
+          <mxGeometry height="36" width="110" x="700" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_submit_top" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#71639E;strokeColor=#71639E;fontColor=#ffffff;fontSize:13;fontWeight:bold;" value="提交" vertex="1">
+          <mxGeometry height="36" width="140" x="820" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="group1_label" parent="1" style="text;html=1;align=left;fontSize:13;fontWeight:bold;strokeColor=none;fillColor=none;" value="基础信息（系统自动，不可编辑）" vertex="1">
+          <mxGeometry height="24" width="400" x="30" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_lab" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontSize:12;strokeColor=none;fillColor=none;" value="作业单号:" vertex="1">
+          <mxGeometry height="28" width="100" x="30" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;align=left;spacingLeft=6;fontSize=11;" value="VAS-202608300001" vertex="1">
+          <mxGeometry height="28" width="240" x="140" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_lab" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontSize:12;strokeColor=none;fillColor=none;" value="新增时间:" vertex="1">
+          <mxGeometry height="28" width="100" x="30" y="139" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;align=left;spacingLeft=6;fontSize=11;" value="2026-08-30 14:20:35" vertex="1">
+          <mxGeometry height="28" width="240" x="140" y="139" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_lab" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontSize:12;strokeColor=none;fillColor=none;" value="提交人:" vertex="1">
+          <mxGeometry height="28" width="100" x="410" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;fontColor=#999;align=left;spacingLeft=6;fontSize=11;" value="（提交后自动填充）" vertex="1">
+          <mxGeometry height="28" width="240" x="520" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_lab" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontSize:12;strokeColor=none;fillColor=none;" value="提交时间:" vertex="1">
+          <mxGeometry height="28" width="100" x="410" y="139" as="geometry" />
+        </mxCell>
+        <mxCell id="f4_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;fontColor=#999;align=left;spacingLeft=6;fontSize=11;" value="（提交后自动填充）" vertex="1">
+          <mxGeometry height="28" width="240" x="520" y="139" as="geometry" />
+        </mxCell>
+        <mxCell id="group2_label" parent="1" style="text;html=1;align=left;fontSize:13;fontWeight:bold;strokeColor=none;fillColor=none;" value="单据信息" vertex="1">
+          <mxGeometry height="24" width="200" x="30" y="186" as="geometry" />
+        </mxCell>
+        <mxCell id="f5_lab" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontSize:12;strokeColor=none;fillColor=none;" value="关联对象:" vertex="1">
+          <mxGeometry height="28" width="100" x="30" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="f5_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#bbbbbb;align=left;spacingLeft=6;fontSize=11;" value="出库订单  ▾" vertex="1">
+          <mxGeometry height="32" width="240" x="140" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="f6_lab" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontSize:12;strokeColor=none;fillColor=none;" value="关联单据号:" vertex="1">
+          <mxGeometry height="28" width="100" x="30" y="256" as="geometry" />
+        </mxCell>
+        <mxCell id="f6_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#bbbbbb;align=left;spacingLeft=6;fontSize=11;" value="OUT-00123  ✓" vertex="1">
+          <mxGeometry height="32" width="180" x="140" y="256" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_scan" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#71639E;fontColor=#71639E;fontSize=11;" value="扫码" vertex="1">
+          <mxGeometry height="32" width="60" x="330" y="256" as="geometry" />
+        </mxCell>
+        <mxCell id="f7_lab" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontSize:12;strokeColor=none;fillColor=none;" value="客户:" vertex="1">
+          <mxGeometry height="28" width="100" x="410" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="f7_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;align=left;spacingLeft=6;fontSize=11;" value="DE-Customer-A" vertex="1">
+          <mxGeometry height="28" width="240" x="520" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="f7_hint" parent="1" style="text;html=1;align=left;fontSize:10;fontColor=#999;strokeColor=none;fillColor=none;" value="（由关联单据自动带出，不可编辑）" vertex="1">
+          <mxGeometry height="18" width="240" x="520" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="f8_lab" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontSize:12;strokeColor=none;fillColor=none;" value="操作员:" vertex="1">
+          <mxGeometry height="28" width="100" x="410" y="274" as="geometry" />
+        </mxCell>
+        <mxCell id="f8_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#bbbbbb;align=left;spacingLeft=6;fontSize=11;" value="张三  ▾" vertex="1">
+          <mxGeometry height="32" width="240" x="520" y="274" as="geometry" />
+        </mxCell>
+        <mxCell id="f8_hint" parent="1" style="text;html=1;align=left;fontSize:10;fontColor=#999;strokeColor=none;fillColor=none;" value="（一张作业单只对应一个操作员）" vertex="1">
+          <mxGeometry height="18" width="240" x="520" y="306" as="geometry" />
+        </mxCell>
+        <mxCell id="tab1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8edf2;strokeColor=#999;fontSize:12;" value="作业明细" vertex="1">
+          <mxGeometry height="28" width="120" x="30" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="o2m_frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999;" value="" vertex="1">
+          <mxGeometry height="200" width="920" x="30" y="368" as="geometry" />
+        </mxCell>
+        <mxCell id="th1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f3f7;strokeColor=#cccccc;fontSize:11;fontWeight:bold;align=left;spacingLeft=6;" value="操作类型" vertex="1">
+          <mxGeometry height="32" width="200" x="40" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="th2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f3f7;strokeColor=#cccccc;fontSize:11;fontWeight:bold;align=left;spacingLeft=6;" value="数量/工时" vertex="1">
+          <mxGeometry height="32" width="160" x="240" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="th3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f3f7;strokeColor=#cccccc;fontSize:11;fontWeight:bold;align=left;spacingLeft=6;" value="单位（自动）" vertex="1">
+          <mxGeometry height="32" width="140" x="400" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="th4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f3f7;strokeColor=#cccccc;fontSize:11;fontWeight:bold;align=left;spacingLeft=6;" value="备注" vertex="1">
+          <mxGeometry height="32" width="260" x="540" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="th5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f3f7;strokeColor=#cccccc;fontSize:11;fontWeight:bold;align=left;spacingLeft=6;" value="操作" vertex="1">
+          <mxGeometry height="32" width="140" x="800" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dddddd;fontSize:11;align=left;spacingLeft=6;" value="贴标  ▾" vertex="1">
+          <mxGeometry height="32" width="200" x="40" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dddddd;fontSize:11;align=left;spacingLeft=6;" value="20" vertex="1">
+          <mxGeometry height="32" width="160" x="240" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#dddddd;fontSize:11;fontColor=#777;align=left;spacingLeft=6;" value="张" vertex="1">
+          <mxGeometry height="32" width="140" x="400" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dddddd;fontSize:11;align=left;spacingLeft=6;" value="" vertex="1">
+          <mxGeometry height="32" width="260" x="540" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c5" parent="1" style="text;html=1;fontSize:11;fontColor=#ff4d4f;strokeColor=none;fillColor=none;" value="删除" vertex="1">
+          <mxGeometry height="32" width="140" x="800" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dddddd;fontSize:11;align=left;spacingLeft=6;" value="缠膜  ▾" vertex="1">
+          <mxGeometry height="32" width="200" x="40" y="442" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dddddd;fontSize:11;align=left;spacingLeft=6;" value="5" vertex="1">
+          <mxGeometry height="32" width="160" x="240" y="442" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#dddddd;fontSize:11;fontColor=#777;align=left;spacingLeft=6;" value="托" vertex="1">
+          <mxGeometry height="32" width="140" x="400" y="442" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dddddd;fontSize:11;align=left;spacingLeft=6;" value="托盘整体缠膜" vertex="1">
+          <mxGeometry height="32" width="260" x="540" y="442" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c5" parent="1" style="text;html=1;fontSize:11;fontColor=#ff4d4f;strokeColor=none;fillColor=none;" value="删除" vertex="1">
+          <mxGeometry height="32" width="140" x="800" y="442" as="geometry" />
+        </mxCell>
+        <mxCell id="o2m_toolbar" parent="1" style="text;html=1;align=left;fontSize:11;fontColor=#555;strokeColor=none;fillColor=none;" value="[添加行]  [删除选中]    * 最少保留1条明细方可提交" vertex="1">
+          <mxGeometry height="24" width="700" x="40" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="tab2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8edf2;strokeColor=#999;fontSize:12;" value="作业凭证附件" vertex="1">
+          <mxGeometry height="28" width="140" x="160" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="attach_frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999;" value="" vertex="1">
+          <mxGeometry height="130" width="920" x="30" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="attach_desc" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="支持多选多文件上传（图片、视频），批量添加；每个附件独立删除；非必填。" vertex="1">
+          <mxGeometry height="24" width="880" x="45" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_multi_upload" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#888;fontSize:12;" value="【选择多个文件】" vertex="1">
+          <mxGeometry height="34" width="140" x="45" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="att1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f7f7f7;strokeColor=#cccccc;fontSize:11;align=left;spacingLeft=6;" value="IMG-001.jpg  [移除]" vertex="1">
+          <mxGeometry height="26" width="200" x="45" y="664" as="geometry" />
+        </mxCell>
+        <mxCell id="att2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f7f7f7;strokeColor=#cccccc;fontSize:11;align=left;spacingLeft=6;" value="IMG-002.jpg  [移除]" vertex="1">
+          <mxGeometry height="26" width="200" x="255" y="664" as="geometry" />
+        </mxCell>
+        <mxCell id="att3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f7f7f7;strokeColor=#cccccc;fontSize:11;align=left;spacingLeft=6;" value="video-现场.mp4  [移除]" vertex="1">
+          <mxGeometry height="26" width="220" x="465" y="664" as="geometry" />
+        </mxCell>
+        <mxCell id="bottom_bar" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#e8e8e8;" value="" vertex="1">
+          <mxGeometry height="50" width="980" x="10" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_draft_bottom" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize:13;" value="保存草稿" vertex="1">
+          <mxGeometry height="36" width="110" x="700" y="728" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_submit_bottom" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#71639E;strokeColor=#71639E;fontColor=#ffffff;fontSize:13;fontWeight:bold;" value="提交" vertex="1">
+          <mxGeometry height="36" width="140" x="820" y="728" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

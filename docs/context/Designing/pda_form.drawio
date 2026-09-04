@@ -1,0 +1,127 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="7DZWKP-EBPRaOt4swG60">
+    <mxGraphModel dx="1204" dy="724" grid="1" gridSize="10" guides="0" tooltips="0" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pda_frame" parent="1" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#444444;" value="" vertex="1">
+          <mxGeometry height="840" width="420" x="10" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="pda_header" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize:15;fontWeight:bold;strokeColor=none;fillColor=#71639E;fontColor=#ffffff;" value="← 库内增值作业单" vertex="1">
+          <mxGeometry height="48" width="420" x="10" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="section_base_title" parent="1" style="text;html=1;align=left;fontSize:12;fontWeight:bold;strokeColor=none;fillColor=none;" value="基础信息（只读）" vertex="1">
+          <mxGeometry height="22" width="370" x="24" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f1_label" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="作业单号" vertex="1">
+          <mxGeometry height="24" width="120" x="24" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f1_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;align=left;spacingLeft=8;fontSize=11;" value="VAS‑202608300001" vertex="1">
+          <mxGeometry height="28" width="270" x="144" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f2_label" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="新增时间" vertex="1">
+          <mxGeometry height="24" width="120" x="24" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f2_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;align=left;spacingLeft=8;fontSize=11;" value="2026‑08‑30 14:20:35" vertex="1">
+          <mxGeometry height="28" width="270" x="144" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="section_edit_title" parent="1" style="text;html=1;align=left;fontSize:12;fontWeight:bold;strokeColor=none;fillColor=none;" value="单据信息" vertex="1">
+          <mxGeometry height="22" width="370" x="24" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f3_label" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="关联对象" vertex="1">
+          <mxGeometry height="24" width="120" x="24" y="198" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f3_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#bbbbbb;align=left;spacingLeft=8;fontSize=11;" value="出库订单 ▾" vertex="1">
+          <mxGeometry height="32" width="270" x="144" y="198" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f4_label" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="关联单据号" vertex="1">
+          <mxGeometry height="24" width="120" x="24" y="236" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f4_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#bbbbbb;align=left;spacingLeft=8;fontSize=11;" value="OUT‑00123 ✓" vertex="1">
+          <mxGeometry height="32" width="190" x="144" y="236" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_scan_pda" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#71639E;strokeColor=#71639E;fontColor=white;fontSize=10;" value="扫码" vertex="1">
+          <mxGeometry height="32" width="74" x="340" y="236" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f_cust_label" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="客户(自动带出)" vertex="1">
+          <mxGeometry height="24" width="120" x="24" y="274" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f_cust_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;align=left;spacingLeft=8;fontSize=11;" value="DE‑Customer‑A" vertex="1">
+          <mxGeometry height="28" width="270" x="144" y="274" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f5_label" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="操作员(当前登录)" vertex="1">
+          <mxGeometry height="24" width="120" x="24" y="314" as="geometry" />
+        </mxCell>
+        <mxCell id="p_f5_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;align=left;spacingLeft=8;fontSize=11;" value="张三" vertex="1">
+          <mxGeometry height="28" width="270" x="144" y="314" as="geometry" />
+        </mxCell>
+        <mxCell id="section_line_title" parent="1" style="text;html=1;align=left;fontSize:12;fontWeight:bold;strokeColor=none;fillColor=none;" value="作业明细 (至少1条)" vertex="1">
+          <mxGeometry height="24" width="320" x="24" y="358" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_add_line_pda" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#71639E;fontColor=#71639E;fontSize=11;" value="+ 添加作业行" vertex="1">
+          <mxGeometry height="26" width="154" x="260" y="358" as="geometry" />
+        </mxCell>
+        <mxCell id="line_card1" parent="1" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#f7f7f7;strokeColor=#dddddd;" value="" vertex="1">
+          <mxGeometry height="110" width="390" x="24" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="lc1_t" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="操作类型：贴标" vertex="1">
+          <mxGeometry height="22" width="240" x="34" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="lc1_q" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="数量/工时：20 单位：张" vertex="1">
+          <mxGeometry height="22" width="240" x="34" y="424" as="geometry" />
+        </mxCell>
+        <mxCell id="lc1_r" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="备注：‑" vertex="1">
+          <mxGeometry height="22" width="240" x="34" y="448" as="geometry" />
+        </mxCell>
+        <mxCell id="lc1_del" parent="1" style="text;html=1;align=right;fontSize:11;fontColor=red;strokeColor=none;fillColor=none;" value="删除" vertex="1">
+          <mxGeometry height="22" width="120" x="280" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="line_card2" parent="1" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#f7f7f7;strokeColor=#dddddd;" value="" vertex="1">
+          <mxGeometry height="110" width="390" x="24" y="506" as="geometry" />
+        </mxCell>
+        <mxCell id="lc2_t" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="操作类型：缠膜" vertex="1">
+          <mxGeometry height="22" width="240" x="34" y="516" as="geometry" />
+        </mxCell>
+        <mxCell id="lc2_q" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="数量/工时：5 单位：托" vertex="1">
+          <mxGeometry height="22" width="240" x="34" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="lc2_r" parent="1" style="text;html=1;align=left;fontSize:11;strokeColor=none;fillColor=none;" value="备注：托盘整体缠膜" vertex="1">
+          <mxGeometry height="22" width="240" x="34" y="564" as="geometry" />
+        </mxCell>
+        <mxCell id="lc2_del" parent="1" style="text;html=1;align=right;fontSize:11;fontColor=red;strokeColor=none;fillColor=none;" value="删除" vertex="1">
+          <mxGeometry height="22" width="120" x="280" y="516" as="geometry" />
+        </mxCell>
+        <mxCell id="section_attach_title" parent="1" style="text;html=1;align=left;fontSize:12;fontWeight:bold;strokeColor=none;fillColor=none;" value="作业凭证附件" vertex="1">
+          <mxGeometry height="24" width="370" x="24" y="626" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_camera" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#71639E;strokeColor=#71639E;fontColor=white;fontSize=11;" value="📷 拍照" vertex="1">
+          <mxGeometry height="34" width="170" x="24" y="654" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_gallery" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#71639E;fontColor=#71639E;fontSize=11;" value="🗂 从相册多选" vertex="1">
+          <mxGeometry height="34" width="210" x="204" y="654" as="geometry" />
+        </mxCell>
+        <mxCell id="att_p1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f1f1f1;strokeColor=#cccccc;fontSize=10;" value="IMG01.jpg [×]" vertex="1">
+          <mxGeometry height="24" width="120" x="24" y="696" as="geometry" />
+        </mxCell>
+        <mxCell id="att_p2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f1f1f1;strokeColor=#cccccc;fontSize=10;" value="IMG02.jpg [×]" vertex="1">
+          <mxGeometry height="24" width="120" x="150" y="696" as="geometry" />
+        </mxCell>
+        <mxCell id="att_p3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f1f1f1;strokeColor=#cccccc;fontSize=10;" value="video.mp4 [×]" vertex="1">
+          <mxGeometry height="24" width="138" x="276" y="696" as="geometry" />
+        </mxCell>
+        <mxCell id="pda_bottom_bar" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" value="" vertex="1">
+          <mxGeometry height="90" width="420" x="10" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_pda_draft" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=13;" value="保存草稿" vertex="1">
+          <mxGeometry height="44" width="182" x="24" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_pda_submit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#71639E;strokeColor=#71639E;fontColor=white;fontSize=13;fontWeight:bold;" value="提交" vertex="1">
+          <mxGeometry height="44" width="200" x="214" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="hint_pda" parent="1" style="text;html=1;align=center;fontSize=10;fontColor=#888;strokeColor=none;fillColor=none;" value="提示：至少一条作业明细才允许提交" vertex="1">
+          <mxGeometry height="24" width="390" x="24" y="804" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

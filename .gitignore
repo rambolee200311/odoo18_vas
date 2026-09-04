@@ -1,0 +1,47 @@
+# Python environments and bytecode
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+odoo/
+execution/
+# Packaging and build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Odoo runtime data
+debug_logs/
+filestore/
+sessions/
+*.log
+
+# Local configuration and secrets
+odoo.conf
+*.local
+.env
+.env.*
+
+# IDE and operating-system files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local databases and test artifacts
+*.db
+*.sqlite
+*.sqlite3
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+.cache/
+
+# others
+addons/worlddepot/

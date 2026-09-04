@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="2ouOqxqyesCmLC5lkNOu">
+    <mxGraphModel dx="2241" dy="761" grid="1" gridSize="10" guides="0" tooltips="0" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mask" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;opacity=40;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="760" width="440" as="geometry" />
+        </mxCell>
+        <mxCell id="modal_frame" parent="1" style="rounded=6;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" value="" vertex="1">
+          <mxGeometry height="520" width="400" x="20" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="modal_header" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize:15;fontWeight:bold;strokeColor=none;fillColor=#71639E;fontColor=#ffffff;" value="新增作业明细" vertex="1">
+          <mxGeometry height="48" width="400" x="20" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="modal_close" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize:20;fontColor=#ffffff;strokeColor=none;fillColor=none;" value="×" vertex="1">
+          <mxGeometry height="48" width="40" x="380" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="step1_label" parent="1" style="text;html=1;align=left;fontSize:12;fontWeight:bold;strokeColor=none;fillColor=none;" value="① 操作类型" vertex="1">
+          <mxGeometry height="24" width="200" x="40" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="step1_select" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#bbbbbb;align=left;spacingLeft=10;fontSize:12;" value="请选择作业类型  ▾" vertex="1">
+          <mxGeometry height="40" width="360" x="40" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="step1_hint" parent="1" style="text;html=1;align=left;fontSize:10;fontColor=#999;strokeColor=none;fillColor=none;" value="（第一版仅下拉选择，暂不支持扫码）" vertex="1">
+          <mxGeometry height="18" width="360" x="40" y="252" as="geometry" />
+        </mxCell>
+        <mxCell id="step2_label" parent="1" style="text;html=1;align=left;fontSize:12;fontWeight:bold;strokeColor=none;fillColor=none;" value="② 数量/工时" vertex="1">
+          <mxGeometry height="24" width="200" x="40" y="284" as="geometry" />
+        </mxCell>
+        <mxCell id="step2_input" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#bbbbbb;align=left;spacingLeft=10;fontSize:14;" value="" vertex="1">
+          <mxGeometry height="40" width="220" x="40" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="step2_unit_label" parent="1" style="text;html=1;align=left;fontSize:11;fontColor=#666;strokeColor=none;fillColor=none;" value="单位（自动）" vertex="1">
+          <mxGeometry height="18" width="120" x="272" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="step2_unit_val" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#cccccc;fontColor=#999;align=left;spacingLeft=8;fontSize=11;" value="（选类型后自动显示）" vertex="1">
+          <mxGeometry height="40" width="128" x="272" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="step2_hint" parent="1" style="text;html=1;align=left;fontSize:10;fontColor=#999;strokeColor=none;fillColor=none;" value="实物作业填数量，人工作业填工时，由操作类型决定" vertex="1">
+          <mxGeometry height="18" width="360" x="40" y="354" as="geometry" />
+        </mxCell>
+        <mxCell id="step3_label" parent="1" style="text;html=1;align=left;fontSize:12;fontWeight:bold;strokeColor=none;fillColor=none;" value="③ 备注（选填）" vertex="1">
+          <mxGeometry height="24" width="200" x="40" y="386" as="geometry" />
+        </mxCell>
+        <mxCell id="step3_textarea" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#bbbbbb;align=left;spacingLeft=10;spacingTop=8;fontSize:12;" value="" vertex="1">
+          <mxGeometry height="60" width="360" x="40" y="412" as="geometry" />
+        </mxCell>
+        <mxCell id="step3_hint" parent="1" style="text;html=1;align=left;fontSize:10;fontColor=#999;strokeColor=none;fillColor=none;" value="记录异常情况、特殊作业说明，可不填" vertex="1">
+          <mxGeometry height="18" width="360" x="40" y="476" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_cancel" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize:14;" value="取消" vertex="1">
+          <mxGeometry height="48" width="160" x="40" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="btn_confirm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#71639E;strokeColor=#71639E;fontColor=#ffffff;fontSize:14;fontWeight:bold;" value="确认添加" vertex="1">
+          <mxGeometry height="48" width="180" x="220" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_hint" parent="1" style="text;html=1;align=center;fontSize:10;fontColor=#888;strokeColor=none;fillColor=none;" value="操作流程：选择作业类型 → 系统自动带出单位 → 填写数量/工时 → 可选备注 → 确认" vertex="1">
+          <mxGeometry height="36" width="400" x="20" y="660" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
