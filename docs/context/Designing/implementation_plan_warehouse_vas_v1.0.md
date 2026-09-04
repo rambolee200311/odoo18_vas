@@ -1,7 +1,7 @@
 # Warehouse VAS Implementation Plan
 
 > 文档版本：v1.0
-> 状态：Implementation Plan v1.0 Frozen / READY TO DRAFT CC-01
+> 状态：Implementation Plan v1.0 Approved Execution Baseline / READY TO DRAFT CC-01
 > 模块：`wd_warehouse_value_add`
 > 基线日期：2026-09-04
 
@@ -454,16 +454,16 @@ NEXT CONTRACT: CC-01
 
 CC-01 正式 Coding Contract 必须在当前代码事实基础上重新确认实际 allowlist、测试选择、禁止修改文件和变更边界。不得在本计划中起草 CC-02、CC-03 或 CC-04。
 
-## 13. Plan Freeze Record
+## 13. Plan Approval Record
 
 ```text
 Plan Version: v1.0
-Plan Status: FROZEN
-Freeze Decision: Human Final Review after directed corrections
+Plan Status: APPROVED EXECUTION BASELINE
+Approval Decision: Human Final Review after directed corrections
 Current Gate: READY TO DRAFT CC-01
 ```
 
-冻结仅表示实施顺序、切片边界、依赖和 Gate 已收口；后续实现事实仍须遵守 Re-planning Rule，不能借 Plan 修改 Frozen TDD。
+本基线只表示当前批准的实施顺序、切片边界、依赖和 Gate；后续实现事实仍须遵守 Re-planning Rule，可在 FR 后调整后续计划，但不能借 Plan 修改 Frozen SRS/TDD。
 
 ## 14. Plan Gate
 
