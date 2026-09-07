@@ -74,8 +74,21 @@ Warehouse Value Add
         'data/ir_sequence_data.xml',
         'views/vas_operation_type_views.xml',
         'views/vas_order_views.xml',
+        'views/vas_frontend_actions.xml',
         'views/vas_menus.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'wd_warehouse_value_add/static/src/js/vas_dashboard.js',
+            'wd_warehouse_value_add/static/src/js/vas_pda_action.js',
+            'wd_warehouse_value_add/static/src/xml/vas_dashboard.xml',
+            'wd_warehouse_value_add/static/src/xml/vas_pda_action.xml',
+            'wd_warehouse_value_add/static/src/scss/vas_pda_action.scss',
+        ],
+        'web.assets_tests': [
+            'wd_warehouse_value_add/static/tests/vas_pda_action_tests.js',
+        ],
+    },
 
     'installable': True,
     'auto_install': False,

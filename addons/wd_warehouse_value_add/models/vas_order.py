@@ -57,7 +57,6 @@ class VasOrder(models.Model):
     )
     warehouse_order_billno = fields.Char(
         string='Warehouse Order Bill No.',
-        required=True,
     )
     warehouse_order_display = fields.Char(
         string='Warehouse Order',
@@ -66,7 +65,6 @@ class VasOrder(models.Model):
     warehouse_id = fields.Many2one(
         'stock.warehouse',
         string='Warehouse',
-        required=True,
         ondelete='restrict',
     )
     operator_id = fields.Many2one(
