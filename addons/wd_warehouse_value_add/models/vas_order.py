@@ -126,6 +126,33 @@ class VasOrder(models.Model):
     )
     notes = fields.Text(string='Notes', tracking=True)
 
+    _PROTECTED_WRITE_FIELDS = frozenset({
+        'state',
+        'order_type',
+        'inbound_order_id',
+        'outbound_order_id',
+        'transfer_order_id',
+        'warehouse_order_billno',
+        'warehouse_id',
+        'operator_id',
+        'submitter_id',
+        'submitted_at',
+        'unsubmitted_by',
+        'unsubmitted_at',
+        'cancelled_by',
+        'cancelled_at',
+        'cancel_reason',
+        'line_ids',
+        'attachment_ids',
+        'notes',
+    })
+
+    _RELATION_BY_ORDER_TYPE = {
+        'inbound': ('inbound_order_id', 'world.depot.inbound.order'),
+        'outbound': ('outbound_order_id', 'world.depot.outbound.order'),
+        'transfer': ('transfer_order_id', 'world.depot.transfer.order'),
+    }
+
     @api.model_create_multi
     def create(self, vals_list):
         sequence = self.env['ir.sequence']
@@ -133,6 +160,149 @@ class VasOrder(models.Model):
             if vals.get('name', 'New') == 'New':
                 vals['name'] = sequence.next_by_code('wd.vas.order') or 'New'
         return super().create(vals_list)
+
+    def _lock_for_update(self):
+        records = self.sorted('id')
+        if not records:
+            return records
+        self.env.cr.execute(
+            'SELECT id FROM wd_vas_order WHERE id IN %s FOR UPDATE',
+            [tuple(records.ids)],
+        )
+        records.invalidate_recordset()
+        return records
+
+    def _lock_warehouse_order(self, warehouse_order):
+        self.env.cr.execute(
+            'SELECT id FROM "%s" WHERE id = %%s FOR UPDATE'
+            % warehouse_order._table,
+            [warehouse_order.id],
+        )
+        warehouse_order.invalidate_recordset(
+            ['state', 'billno', 'warehouse'],
+        )
+        return warehouse_order
+
+    def _action_write(self, vals):
+        return super(VasOrder, self).write(vals)
+
+    def _get_warehouse_order(self):
+        self.ensure_one()
+        relation = self._RELATION_BY_ORDER_TYPE.get(self.order_type)
+        if not relation:
+            raise ValidationError('Warehouse Order type is invalid.')
+
+        billno = (self.warehouse_order_billno or '').strip()
+        if not billno:
+            raise ValidationError('Warehouse Order bill number is required.')
+        if billno != self.warehouse_order_billno:
+            self._action_write({'warehouse_order_billno': billno})
+
+        warehouse_order_model = self.env[relation[1]]
+        warehouse_orders = warehouse_order_model.search([
+            ('billno', '=', billno),
+        ])
+        if not warehouse_orders:
+            raise ValidationError(
+                'No Warehouse Order was found for the specified type and bill number.'
+            )
+        if len(warehouse_orders) > 1:
+            raise ValidationError(
+                'More than one Warehouse Order matches the specified type and bill number.'
+            )
+        return self._lock_warehouse_order(warehouse_orders)
+
+    def _validate_submit(self):
+        self.ensure_one()
+        if self.state != 'draft':
+            raise ValidationError('Only Draft VAS Orders can be submitted.')
+        if not self.operator_id or not self.operator_id.active:
+            raise ValidationError('An active Operator is required.')
+        if not self.line_ids:
+            raise ValidationError('At least one VAS Order line is required.')
+        for line in self.line_ids:
+            if not line.operation_type_id or not line.operation_type_id.active:
+                raise ValidationError(
+                    'Each line must use an active Operation Type.'
+                )
+            if not line.unit_id or line.unit_id != line.operation_type_id.unit_id:
+                raise ValidationError(
+                    'Each line unit must match its Operation Type.'
+                )
+            if line.quantity_time is None or line.quantity_time <= 0:
+                raise ValidationError(
+                    'Each line quantity or time must be greater than zero.'
+                )
+
+    def action_submit(self):
+        self.ensure_one()
+        self._lock_for_update()
+        self._validate_submit()
+        warehouse_order = self._get_warehouse_order()
+        if warehouse_order.state == 'cancel':
+            raise ValidationError(
+                'A cancelled Warehouse Order cannot be submitted.'
+            )
+        if not warehouse_order.warehouse:
+            raise ValidationError(
+                'The Warehouse Order must have a warehouse before submission.'
+            )
+        relation_field = self._RELATION_BY_ORDER_TYPE[self.order_type][0]
+        relation_values = {
+            'inbound_order_id': False,
+            'outbound_order_id': False,
+            'transfer_order_id': False,
+            relation_field: warehouse_order.id,
+            'warehouse_order_billno': warehouse_order.billno,
+            'warehouse_id': warehouse_order.warehouse.id,
+            'submitter_id': self.env.user.id,
+            'submitted_at': fields.Datetime.now(),
+            'state': 'submitted',
+        }
+        self._action_write(relation_values)
+        return True
+
+    def action_unsubmit(self):
+        self.ensure_one()
+        self._lock_for_update()
+        if self.state != 'submitted':
+            raise ValidationError(
+                'Only Submitted VAS Orders can be unsubmitted.'
+            )
+        self._action_write({
+            'unsubmitted_by': self.env.user.id,
+            'unsubmitted_at': fields.Datetime.now(),
+            'state': 'draft',
+        })
+        return True
+
+    def action_cancel(self, reason=None):
+        self.ensure_one()
+        self._lock_for_update()
+        if self.state != 'draft':
+            raise ValidationError('Only Draft VAS Orders can be cancelled.')
+        cancel_reason = (reason if reason is not None else self.cancel_reason or '').strip()
+        if not cancel_reason:
+            raise ValidationError('A cancellation reason is required.')
+        self._action_write({
+            'cancel_reason': cancel_reason,
+            'cancelled_by': self.env.user.id,
+            'cancelled_at': fields.Datetime.now(),
+            'state': 'cancelled',
+        })
+        return True
+
+    def write(self, vals):
+        for record in self:
+            record._lock_for_update()
+            if (
+                record.state in ('submitted', 'cancelled')
+                and self._PROTECTED_WRITE_FIELDS.intersection(vals)
+            ):
+                raise ValidationError(
+                    'Submitted or Cancelled VAS Orders cannot be modified.'
+                )
+        return super().write(vals)
 
     @api.constrains('name')
     def _check_name_unique(self):
