@@ -2,3 +2,5 @@
 
 from . import test_vas_order
 from . import test_vas_concurrency
+from . import test_vas_security
+from . import test_vas_attachment

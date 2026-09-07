@@ -70,7 +70,11 @@ Warehouse Value Add
 
     'data': [
         'security/security.xml',
+        'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',
+        'views/vas_operation_type_views.xml',
+        'views/vas_order_views.xml',
+        'views/vas_menus.xml',
     ],
 
     'installable': True,

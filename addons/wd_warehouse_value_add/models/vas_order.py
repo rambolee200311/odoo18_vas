@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+from odoo.exceptions import AccessError, ValidationError
 
 
 class VasOrder(models.Model):
@@ -216,7 +216,18 @@ class VasOrder(models.Model):
         self.ensure_one()
         if self.state != 'draft':
             raise ValidationError('Only Draft VAS Orders can be submitted.')
-        if not self.operator_id or not self.operator_id.active:
+        if (
+            not self.operator_id
+            or not self.operator_id.active
+            or not (
+                self.operator_id.has_group(
+                    'wd_warehouse_value_add.group_vas_user'
+                )
+                or self.operator_id.has_group(
+                    'wd_warehouse_value_add.group_vas_manager'
+                )
+            )
+        ):
             raise ValidationError('An active Operator is required.')
         if not self.line_ids:
             raise ValidationError('At least one VAS Order line is required.')
@@ -236,6 +247,7 @@ class VasOrder(models.Model):
 
     def action_submit(self):
         self.ensure_one()
+        self._check_action_access()
         self._lock_for_update()
         self._validate_submit()
         warehouse_order = self._get_warehouse_order()
@@ -264,6 +276,7 @@ class VasOrder(models.Model):
 
     def action_unsubmit(self):
         self.ensure_one()
+        self._check_action_access()
         self._lock_for_update()
         if self.state != 'submitted':
             raise ValidationError(
@@ -278,6 +291,7 @@ class VasOrder(models.Model):
 
     def action_cancel(self, reason=None):
         self.ensure_one()
+        self._check_action_access()
         self._lock_for_update()
         if self.state != 'draft':
             raise ValidationError('Only Draft VAS Orders can be cancelled.')
@@ -291,6 +305,15 @@ class VasOrder(models.Model):
             'state': 'cancelled',
         })
         return True
+
+    def _check_action_access(self):
+        if self.env.is_superuser() or self.env.user.has_group(
+            'wd_warehouse_value_add.group_vas_user'
+        ) or self.env.user.has_group(
+            'wd_warehouse_value_add.group_vas_manager'
+        ):
+            return
+        raise AccessError('You do not have permission to perform this VAS action.')
 
     def write(self, vals):
         for record in self:

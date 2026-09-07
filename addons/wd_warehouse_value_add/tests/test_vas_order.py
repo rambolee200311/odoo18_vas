@@ -18,9 +18,14 @@ class TestVasOrder(TransactionCase):
         cls.Project = cls.env['project.project']
         cls.Currency = cls.env['res.currency']
         cls.Operator = cls.env['res.users'].search(
-            [('active', '=', True)],
+            [('active', '=', True), ('share', '=', False)],
             limit=1,
         )
+        cls.vas_user_group = cls.env.ref(
+            'wd_warehouse_value_add.group_vas_user'
+        )
+        cls.env.user.write({'groups_id': [(4, cls.vas_user_group.id)]})
+        cls.Operator.write({'groups_id': [(4, cls.vas_user_group.id)]})
         cls.unit = cls.ChargeUnit.create({'name': 'Hour'})
         cls.warehouse = cls.Warehouse.search([], limit=1)
         if not cls.warehouse:
