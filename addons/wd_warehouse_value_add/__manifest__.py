@@ -61,60 +61,18 @@ Warehouse Value Add
     'category': 'Warehouse',
     'version': '1.0.0',
 
-    # -------------------------------------------------------------------------
-    # Dependencies
-    # -------------------------------------------------------------------------
-    # base:
-    #   Odoo 基础模型、用户、权限等。
-    #
-    # stock:
-    #   入库/出库等仓库业务单据关联。
-    #
-    # mail:
-    #   chatter / attachment 等基础能力。
-    #
-    # web:
-    #   Web 后台视图及 PDA Web 页面基础能力。
-    #
-    # 当前版本不依赖 Odoo Barcode 应用。
-    # “关联单据号扫码”仅作为输入方式，
-    # 如后续实现专用 Barcode/OWL 扫码组件，再增加对应依赖。
-    # -------------------------------------------------------------------------
     'depends': [
         'base',
-        'stock',
         'mail',
         'web',
         'worlddepot',
     ],
 
-    # -------------------------------------------------------------------------
-    # Data files
-    # -------------------------------------------------------------------------
     'data': [
-        # 安全权限
-        'security/ir.model.access.csv',
-
-        # 基础数据
-        # 操作类型及对应默认计量单位
-        'data/vas_operation_type_data.xml',
-
-        # 作业明细视图
-        'views/vas_warehouse_value_add_line_views.xml',
-
-        # 主单列表视图
-        'views/vas_warehouse_value_add_list_views.xml',
-
-        # 主单 Web / PDA 表单视图
-        'views/vas_warehouse_value_add_form_views.xml',
+        'security/security.xml',
+        'data/ir_sequence_data.xml',
     ],
 
-    # -------------------------------------------------------------------------
-    # Module configuration
-    # -------------------------------------------------------------------------
-    # 当前版本 PDA 使用 Odoo Web 视图实现，
-    # 暂无独立 OWL / JavaScript / CSS 静态资源，
-    # 因此无需声明 assets。
     'installable': True,
     'auto_install': False,
     'application': True,

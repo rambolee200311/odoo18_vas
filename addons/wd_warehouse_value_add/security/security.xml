@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_vas_user" model="res.groups">
+        <field name="name">VAS User</field>
+    </record>
+
+    <record id="group_vas_manager" model="res.groups">
+        <field name="name">VAS Manager</field>
+    </record>
+</odoo>
