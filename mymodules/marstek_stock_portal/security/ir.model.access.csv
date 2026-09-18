@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_marstek_stock_quant_package_portal,marstek.stock.quant.package.portal,stock.model_stock_quant_package,base.group_portal,1,0,0,0
+access_marstek_stock_quant_portal,marstek.stock.quant.portal,stock.model_stock_quant,base.group_portal,1,0,0,0
+access_marstek_stock_move_line_portal,marstek.stock.move.line.portal,stock.model_stock_move_line,base.group_portal,1,0,0,0
+access_marstek_outbound_order_sn_detail_portal,marstek.outbound.order.sn.detail.portal,worlddepot.model_world_depot_outbound_order_sn_detail,base.group_portal,1,0,0,0

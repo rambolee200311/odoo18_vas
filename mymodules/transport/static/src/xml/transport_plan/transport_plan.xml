@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="transport.TransportPlanTemplate" owl="1">
+        <div class="o_transport_plan_container">
+            <!-- 页面标题 -->
+            <div class="o_transport_plan_header">
+                <!-- 运输计划排期 -->
+                <h2>Transport Plan Scheduling</h2>
+            </div>
+
+            <!-- 主内容区：左右布局 -->
+            <div class="o_transport_plan_content">
+                <!-- 左侧：集装箱列表 -->
+                <div class="o_container_list_panel">
+                    <div class="o_panel_header">
+                        <div class="o_panel_header_title">
+                            <h4>Pending Containers</h4>
+                            <span class="badge bg-secondary" t-esc="this.getFilteredContainers().length"></span>
+                        </div>
+                        <div class="o_panel_header_actions">
+                            <button type="button"
+                                    class="btn btn-sm btn-primary"
+                                    t-on-click="openContainerForm">
+                                + Add Container
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 筛选条件 -->
+                    <div class="o_filter_bar">
+                        <div class="o_filter_group">
+                            <select class="form-select form-select-sm"
+                                    t-on-change="onBlNoChange">
+                                <option value="">All Waybills</option>
+                                <t t-foreach="state.blNoOptions" t-as="option" t-key="option.value">
+                                    <option t-att-value="option.value"
+                                            t-att-selected="state.selectedBlNo === option.value">
+                                        <t t-esc="option.label"/>
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                        <div class="o_filter_group">
+                            <select class="form-select form-select-sm"
+                                    t-on-change="onWarehouseChange">
+                                <option value="">All Warehouses</option>
+                                <t t-foreach="state.warehouseOptions" t-as="option" t-key="option.value">
+                                    <option t-att-value="option.value"
+                                            t-att-selected="state.selectedWarehouseId === option.value">
+                                        <t t-esc="option.label"/>
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                        <div class="o_filter_group" t-if="state.selectedBlNo || state.selectedWarehouseId">
+                            <button type="button"
+                                    class="btn btn-link btn-sm text-danger"
+                                    t-on-click="clearFilters">
+                                Clear Filters
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="o_container_list"
+                         t-on-dragover="onDragOver"
+                         t-on-drop="onContainerListDrop">
+                        <div t-if="this.getFilteredContainers().length === 0" class="o_empty_state">
+                            <p>No pending containers</p>
+                        </div>
+                        <t t-foreach="this.getFilteredContainers()" t-as="container" t-key="container.id">
+                            <div class="o_container_card"
+                                 draggable="true"
+                                 t-on-dragstart="(ev) => onDragStart(ev, container.id)">
+                                <div class="o_container_info">
+                                    <div class="o_container_no">
+                                        <strong t-esc="container.container_no"></strong>
+                                    </div>
+                                    <div class="o_container_details">
+                                        <span>BL No：<t t-esc="container.bl_no"></t></span>
+                                        <span t-if="container.container_type">Type：<t t-esc="container.container_type"></t></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+
+                <!-- 右侧：日历 -->
+                <div class="o_calendar_panel">
+                    <div class="o_calendar_header">
+                        <button type="button" 
+                                class="btn btn-sm btn-outline-secondary"
+                                t-on-click="() => changeMonth(-1)">
+                            ← Previous Month
+                        </button>
+                        <h4 class="o_month_title" t-esc="formatMonthYear()"></h4>
+                        <button type="button" 
+                                class="btn btn-sm btn-outline-secondary"
+                                t-on-click="() => changeMonth(1)">
+                            Next Month →
+                        </button>
+                    </div>
+
+                    <div class="o_calendar_grid">
+                        <!-- 星期标题 -->
+                        <div class="o_calendar_weekdays">
+                            <div class="o_weekday">Sun</div>
+                            <div class="o_weekday">Mon</div>
+                            <div class="o_weekday">Tue</div>
+                            <div class="o_weekday">Wed</div>
+                            <div class="o_weekday">Thu</div>
+                            <div class="o_weekday">Fri</div>
+                            <div class="o_weekday">Sat</div>
+                        </div>
+
+                        <!-- 日历天数 -->
+                        <div class="o_calendar_days">
+                            <t t-foreach="state.calendarDays" t-as="day" t-key="day.key">
+                                <div class="o_calendar_day"
+                                     t-att-class="getDayClass(day)"
+                                     t-on-dragover="onDragOver"
+                                     t-on-drop="(ev) => onDrop(ev, day.dateStr)">
+                                    <div class="o_day_inner">
+                                        <div class="o_day_header">
+                                            <span class="o_day_number"
+                                                  t-if="!day.isEmpty"
+                                                  t-esc="day.date"/>
+                                            <span class="o_day_count badge"
+                                                  t-if="!day.isEmpty and getDayPlans(day.dateStr).count &gt; 0"
+                                                  t-esc="getDayPlans(day.dateStr).count"/>
+                                        </div>
+                                        <div class="o_day_containers">
+                                            <t t-foreach="day.isEmpty ? [] : getDayPlans(day.dateStr).containers"
+                                               t-as="plan"
+                                               t-key="plan.id">
+                                                <div class="o_day_container_item"
+                                                     draggable="true"
+                                                     t-on-dragstart="(ev) => onPlanDragStart(ev, plan.id, plan.container_id[0], day.dateStr)">
+                                                    <span t-esc="plan.container_no"/>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
