@@ -8,15 +8,17 @@ Chenyang Chemical warehouse customizations.
     "author": "World Depot B.V.",
     "category": "Warehouse",
     "version": "18.0.1.2.0",
-    "depends": ["worlddepot", "account", "stock_barcode", "product_expiry", "wd_outbound_payable"],
+    "depends": ["worlddepot", "account", "stock_barcode", "product_expiry", "wd_outbound_payable","wd_attachment_preview"],
     "data": [
         "security/ir.model.access.csv",
         'security/security.xml',
+        "data/pda_internal_transfer_picking_type.xml",
         "data/pda_internal_transfer_cron.xml",
 
         "reports/inbound_pallet_label_report.xml",
         "reports/inbound_arrival_note_report.xml",
         "reports/outbound_lot_code_label_report.xml",
+        "reports/outbound_order_report.xml",
         "reports/inbound_lot_code_label_report.xml",
 
         "views/inbound_order_views.xml",
